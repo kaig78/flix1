@@ -1,0 +1,22 @@
+<article id="user">
+  <header>
+    <h1><%= @genre.name %></h1>
+  </header>
+
+  <ul>
+    <% @movies.each do |movie| %>
+      <li>
+        <%= link_to movie.title, movie %>
+      </li>
+    <% end %>
+  </ul>
+  
+  <footer>
+    <nav>
+      <%= link_to 'Edit', edit_genre_path(@genre), class: 'button' %>
+      <%= link_to 'Delete', @genre, 
+                  class: 'button',
+                  method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  </footer>
+</article>
